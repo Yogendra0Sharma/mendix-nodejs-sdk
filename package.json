@@ -1,5 +1,5 @@
 {
-  "name": "@yogendra/mendix-nodejs-sdk",
+  "name": "@yogendra0sharma/mendix-nodejs-sdk",
   "version": "1.0.0",
   "description": "SDK for Mendix APIs and Command Line Interface for Mendix",
   "main": "./dist/src/index.js",
@@ -16,7 +16,7 @@
     "test:watch": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 mocha --watch test/ --growl --reporter=spec --timeout=0",
     "start-dev": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 cross-env concurrently --raw \"npm run build:watch\" \"npm run test:watch\" ",
     "dev": "npm run build && cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 concurrently --raw \"npm run build:watch\" \"npm run test:watch\" ",
-    "doc": "compodoc -p tsconfig.json --output docs --name \"@yogendra/mendix-nodejs-sdk\" --theme material && cp -r images/ docs/ "
+    "doc": "compodoc -p tsconfig.json --output docs --name \"@yogendra0sharma/mendix-nodejs-sdk\" --theme material && cp -r images/ docs/ "
   },
   "keywords": [
     "Mendix",
