@@ -3,8 +3,7 @@
 ## Nodejs SDK for the Mendix APIs
 SDK for Mendix APIs and Command Line Interface for Mendix
 
-[![The MIT License](https://img.shields.io/badge/license-MIT-009999.svg?style=flat)](./LICENSE.md)
-
+[![The MIT License](https://img.shields.io/badge/license-MIT-009999.svg?style=flat)](./LICENSE.md) ![](https://img.shields.io/badge/mendix-nodejs-sdk.svg)
 
 ## Full documentation
 
