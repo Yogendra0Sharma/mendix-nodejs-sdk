@@ -1,1 +1,2 @@
-console.log("Hello from Mendix Nodejs SDK");
+import { VERSION } from "./version";
+console.log(`mendix NodeJs SDK ${VERSION}`);

@@ -4,6 +4,9 @@
   "description": "SDK for Mendix APIs and Command Line Interface for Mendix",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -13,10 +16,12 @@
     "test-dev": "npm run build && cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 mocha --reporter=list --timeout=0",
     "mocha-run": "mocha --colors --timeout=0",
     "lint": "tslint ./src/**.ts && tslint ./test/**/*.ts",
+    "lint:fix": "tslint --fix -p . -c tslint.json",
     "test:watch": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 mocha --watch test/ --growl --reporter=spec --timeout=0",
     "start-dev": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 cross-env concurrently --raw \"npm run build:watch\" \"npm run test:watch\" ",
     "dev": "npm run build && cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 concurrently --raw \"npm run build:watch\" \"npm run test:watch\" ",
-    "doc": "compodoc -p tsconfig.json --output docs --name \"@yogendra0sharma/mendix-nodejs-sdk\" --theme material && cp -r images/ docs/ "
+    "doc": "compodoc -p tsconfig.json --output docs --name \"@yogendra0sharma/mendix-nodejs-sdk\" --theme material && cp -r images/ docs/ ",
+    "tsc-publish-dry": "tsc-publish --no-checks --dry-run"
   },
   "keywords": [
     "Mendix",
@@ -29,7 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/Yogendra0Sharma/mendix-nodejs-sdk.git"
   },
-  "author": "Yogendra Sharma",
+  "author": "Yogendra Sharma (https://github.com/Yogendra0Sharma)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Yogendra0Sharma/mendix-nodejs-sdk/issues"
@@ -68,6 +73,15 @@
     "tslib": "^2.0.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5",
-    "typescript-tslint-plugin": "^0.5.5"
-  }
+    "typescript-tslint-plugin": "^0.5.5",
+    "tsc-publish": "^0.5.1"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint",
+    "test"
+  ]
 }
